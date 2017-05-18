@@ -23,7 +23,7 @@ def main(request):
         return HttpResponseNotFound("Bad Request")
 
 
-    #podemos buscar si ya hemos hecho un post de "javi"??
+
     elif request.method == 'POST':
         recurso = request.POST['name']
         contenido = request.POST['page']
@@ -44,7 +44,7 @@ def recurso(request, nombreRecurso):
 
     elif request.method == 'POST':
         htmlAnswer = "<!DOCTYPE html><html><body>" \
-                    + "Para crear una pagina vaya, haga click " \
+                    + "Crea pagina, haga click " \
                     + "<a href='localhost:1234/'> aqui</a>" \
                     + "</body></html>"
         HttpResponseNotFound(htmlAnswer)
@@ -59,4 +59,3 @@ def recurso(request, nombreRecurso):
             return(HttpResponse("Se ha actualizado /" + nombreRecurso))
         except Pages.DoesNotExist:
             return HttpResponseNotFound("ERROR! Realizando un PUT sobre algo inexistente")
-    
